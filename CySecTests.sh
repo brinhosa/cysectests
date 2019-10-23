@@ -1,6 +1,6 @@
 #!/bin/bash
 #./ExecCyDefense.sh domain url
-
+# TODO:
 echo $1 $2 $3 ' -> echo $1 $2 $3'
 name=$(date +%Y%m%d)_$1
 mkdir $name
