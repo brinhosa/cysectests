@@ -35,6 +35,9 @@ docker run -it -v $(pwd):/data --rm --shm-size=1024m --cap-add=SYS_ADMIN --entry
 docker run -it -v $(pwd):/data --rm --shm-size=1024m --cap-add=SYS_ADMIN --entrypoint=/usr/bin/google-chrome-unstable yukinying/chrome-headless-browser --headless --disable-gpu --dump-dom https://censys.io/domain/$1 >> chrome_censys.io_1_$1.txt
 
 
+docker run -it -v $(pwd):/data --rm --shm-size=1024m --cap-add=SYS_ADMIN --entrypoint=/usr/bin/google-chrome-unstable yukinying/chrome-headless-browser --headless --disable-gpu --dump-dom https://sitecheck.sucuri.net/results/$1 >> chrome_sucuri_1_$1.txt
+
+
 docker run --rm -v $(pwd):/data alpine wget --no-check-certificate -O /data/http_$1 http://$1
 docker run --rm -v $(pwd):/data alpine wget --no-check-certificate -O /data/httpwww_$1 http://www.$1
 docker run --rm -v $(pwd):/data alpine wget --no-check-certificate -O /data/httpswww_$1 https://www.$1
